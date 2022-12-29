@@ -1,8 +1,8 @@
-import './App.css';
+import "./App.css";
 
-import React from 'react';
+import React from "react";
 
-import PitMap from './PitMap';
+import PitMap from "./PitMap";
 
 function App() {
   return (
