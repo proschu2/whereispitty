@@ -8,66 +8,12 @@
 }
 
 @font-face {
-    font-family: Revelator;
-    src: url(./Revelator.ttf) format("truetype");
-}
-
-.Revelator {
-    font-family: Revelator;
-}
-
-@font-face {
-    font-family: Pain;
-    src: url(./Pain.ttf) format("truetype");
-}
-
-.Pain {
-    font-family: Pain;
-}
-
-@font-face {
-    font-family: Punch;
-    src: url(./Punch.ttf) format("truetype");
-}
-
-.Punch {
-    font-family: Punch;
-}
-
-@font-face {
     font-family: DeltaMachine2;
     src: url(./DeltaMachine2.ttf) format("truetype");
 }
 
 .DeltaMachine2 {
     font-family: DeltaMachine2;
-}
-
-@font-face {
-    font-family: Precious;
-    src: url(./Precious.ttf) format("truetype");
-}
-
-.Precious {
-    font-family: Precious;
-}
-
-@font-face {
-    font-family: Angel1;
-    src: url(./Angel1.ttf) format("truetype");
-}
-
-.Angel1 {
-    font-family: Angel1;
-}
-
-@font-face {
-    font-family: Barrell;
-    src: url(./Barrell.TTF) format("truetype");
-}
-
-.Barrell {
-    font-family: Barrell;
 }
 
 @font-face {
@@ -82,15 +28,6 @@
 @font-face {
     font-family: Papermonsters;
     src: url(./Papermonsters.TTF) format("truetype");
-}
-
-.Papermonsters {
-    font-family: Papermonsters;
-}
-
-@font-face {
-    font-family: Broken;
-    src: url(./Broken.TTF) format("truetype");
 }
 
 .Broken {
@@ -120,15 +57,6 @@
     src: url(./Devotion.TTF) format("truetype");
 }
 
-.Devotion {
-    font-family: Devotion;
-}
-
-@font-face {
-    font-family: Violatio;
-    src: url(./Violatio.ttf) format("truetype");
-}
-
 .Violatio {
     font-family: Violatio;
 }
@@ -136,15 +64,6 @@
 @font-face {
     font-family: Exciter;
     src: url(./Exciter.TTF) format("truetype");
-}
-
-.Exciter {
-    font-family: Exciter;
-}
-
-@font-face {
-    font-family: DeMo;
-    src: url(./DeMo.TTF) format("truetype");
 }
 
 .DeMo {
@@ -156,26 +75,8 @@
     src: url(./Gahan.TTF) format("truetype");
 }
 
-.Gahan {
-    font-family: Gahan;
-}
-
-@font-face {
-    font-family: SufferWell;
-    src: url(./SufferWell.ttf) format("truetype");
-}
-
 .SufferWell {
     font-family: SufferWell;
-}
-
-@font-face {
-    font-family: peoplearepeople;
-    src: url(./peoplearepeople.TTF) format("truetype");
-}
-
-.peoplearepeople_3 {
-    font-family: peoplearepeople;
 }
 
 @font-face {
@@ -185,13 +86,4 @@
 
 .Liquidn {
     font-family: Liquidn;
-}
-
-@font-face {
-    font-family: SoundsUniverse;
-    src: url(./SoundsUniverse.ttf) format("truetype");
-}
-
-.SoundsUniverse {
-    font-family: SoundsUniverse;
 }
