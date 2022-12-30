@@ -6,4 +6,5 @@ export interface location {
   name: string;
   lat: number;
   lon: number;
+  class?: string;
 }

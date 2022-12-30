@@ -2,7 +2,7 @@ import "./App.css";
 
 import React from "react";
 
-import PitMap from "./PitMap";
+import PitMap from "./components/PitMap";
 
 function App() {
   return (

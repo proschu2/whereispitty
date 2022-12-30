@@ -1,15 +1,17 @@
 import { Map, Overlay } from "pigeon-maps";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import data from "./data/locations.json";
+import data from "../data/locations.json";
 import Detail from "./Detail";
-import useWindowDimensions from "./hooks/useWindowDimensions";
-import { CircleFlag } from "react-circle-flags";
-import { location } from "./data/location";
+import useWindowDimensions from "../hooks/useWindowDimensions";
+import { location } from "../data/location";
+/* 
+import { maptiler } from "pigeon-maps/providers";
 
-// import { maptiler } from "pigeon-maps/providers";
-
-// const maptilerProvider = maptiler(process.env.REACT_APP_MAPTILER_API_KEY, "basic-v2-light");
+const maptilerProvider = maptiler(
+  process.env.REACT_APP_MAPTILER_API_KEY ?? "",
+  "basic-v2-light"
+); */
 const initialCenter: [number, number] = [48.71466750292578, 10.961941600930126];
 const PitMap = () => {
   const { height, width } = useWindowDimensions();
@@ -25,11 +27,23 @@ const PitMap = () => {
     setOpen(false);
     resetMap();
   };
+  const [pinSize, setPinSize] = useState<string>("40");
+  useEffect(() => {
+    if (zoom === 5) {
+      setPinSize("40");
+    }
+    if (zoom === 6) {
+      setPinSize("60");
+    }
+    if (zoom > 6) {
+      setPinSize("100");
+    }
+  }, [zoom]); // update based on zoom
 
   return (
     <>
       <Map
-        // provider={maptilerProvider}
+        //provider={maptilerProvider}
         height={height}
         width={width}
         center={center}
@@ -44,10 +58,16 @@ const PitMap = () => {
         {data &&
           data.map((loc) => {
             return (
-              <Overlay key={loc.id} anchor={[loc.lat, loc.lon]} offset={[0, 0]}>
-                <CircleFlag
-                  countryCode={loc.country.toLowerCase()}
-                  height="20"
+              <Overlay
+                className="whiterose"
+                key={loc.id}
+                anchor={[loc.lat, loc.lon]}
+                offset={[0, 0]}
+              >
+                <img
+                  src="/dm_round.png"
+                  alt="DM"
+                  height={pinSize}
                   onClick={() => {
                     setCenter([loc.lat, loc.lon]);
                     setZoom(8);
