@@ -86,12 +86,7 @@ const PitMap = () => {
           })}
       </Map>
       {location && (
-        <Detail
-          props={location}
-          open={open}
-          closeModal={closeModal}
-          fullScreen={width < 600}
-        />
+        <Detail props={location} open={open} closeModal={closeModal} />
       )}
     </>
   );
