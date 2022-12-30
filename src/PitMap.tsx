@@ -44,7 +44,7 @@ const PitMap = () => {
         {data &&
           data.map((loc) => {
             return (
-              <Overlay anchor={[loc.lat, loc.lon]} offset={[0, 0]}>
+              <Overlay key={loc.id} anchor={[loc.lat, loc.lon]} offset={[0, 0]}>
                 <CircleFlag
                   countryCode={loc.country.toLowerCase()}
                   height="20"
