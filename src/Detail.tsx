@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 
-import "react-morphing-modal/dist/ReactMorphingModal.css";
 import Dialog from "@mui/material/Dialog";
 import { location } from "./data/location";
 
