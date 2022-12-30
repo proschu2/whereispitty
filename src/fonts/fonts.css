@@ -26,8 +26,8 @@
 }
 
 @font-face {
-    font-family: Papermonsters;
-    src: url(./Papermonsters.TTF) format("truetype");
+    font-family: Broken;
+    src: url(./Broken.TTF) format("truetype");
 }
 
 .Broken {
@@ -53,8 +53,8 @@
 }
 
 @font-face {
-    font-family: Devotion;
-    src: url(./Devotion.TTF) format("truetype");
+    font-family: Violatio;
+    src: url(./Violatio.ttf) format("truetype");
 }
 
 .Violatio {
@@ -62,8 +62,8 @@
 }
 
 @font-face {
-    font-family: Exciter;
-    src: url(./Exciter.TTF) format("truetype");
+    font-family: DeMo;
+    src: url(./DeMo.TTF) format("truetype");
 }
 
 .DeMo {
@@ -71,8 +71,8 @@
 }
 
 @font-face {
-    font-family: Gahan;
-    src: url(./Gahan.TTF) format("truetype");
+    font-family: SufferWell;
+    src: url(./SufferWell.ttf) format("truetype");
 }
 
 .SufferWell {

@@ -15,29 +15,35 @@ const maptilerProvider = maptiler(
 const initialCenter: [number, number] = [48.71466750292578, 10.961941600930126];
 const PitMap = () => {
   const { height, width } = useWindowDimensions();
+  const initialZoom = width < 600 ? 5 : 6;
   const [center, setCenter] = useState<[number, number]>(initialCenter);
-  const [zoom, setZoom] = useState<number>(6);
+  const [zoom, setZoom] = useState<number>(initialZoom);
   const resetMap = () => {
     setCenter(initialCenter);
-    setZoom(6);
+    setZoom(initialZoom);
   };
   const [open, setOpen] = useState<boolean>(false);
   const [location, setLocation] = useState<location>();
+
+  const [pinSize, setPinSize] = useState<string>("40");
+  const updatePinSize = (zoom: number): void => {
+    if (zoom > 6) {
+      setPinSize("100");
+    } else if (zoom === 6) {
+      setPinSize("60");
+    } else if (zoom === 5) {
+      setPinSize("40");
+    } else {
+      setPinSize("25");
+    }
+  };
   const closeModal = () => {
     setOpen(false);
     resetMap();
+    updatePinSize(zoom);
   };
-  const [pinSize, setPinSize] = useState<string>("40");
   useEffect(() => {
-    if (zoom === 5) {
-      setPinSize("40");
-    }
-    if (zoom === 6) {
-      setPinSize("60");
-    }
-    if (zoom > 6) {
-      setPinSize("100");
-    }
+    updatePinSize(zoom);
   }, [zoom]); // update based on zoom
 
   return (
@@ -80,7 +86,12 @@ const PitMap = () => {
           })}
       </Map>
       {location && (
-        <Detail props={location} open={open} closeModal={closeModal} />
+        <Detail
+          props={location}
+          open={open}
+          closeModal={closeModal}
+          fullScreen={width < 600}
+        />
       )}
     </>
   );

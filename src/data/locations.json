@@ -5,8 +5,7 @@
         "country": "NL",
         "name": "Ziggo Dome",
         "lat": 52.31452,
-        "lon": 4.93877,
-        "class": "DeltaMachine"
+        "lon": 4.93877
     },
     {
         "id": 2,
@@ -15,8 +14,7 @@
         "country": "BE",
         "name": "Sportpaleis Antwerpen",
         "lat": 51.23108167045278,
-        "lon": 4.441361692345381,
-        "class": "Angel1"
+        "lon": 4.441361692345381
     },
     {
         "id": 3,
@@ -25,8 +23,7 @@
         "country": "DE",
         "name": "Leipziger Festwiese",
         "lat": 51.342931550431956,
-        "lon": 12.34959536474302,
-        "class": "Barrell"
+        "lon": 12.34959536474302
     },
     {
         "id": 4,
@@ -35,8 +32,7 @@
         "country": "SK",
         "name": "Národny Futbalovy Stadión",
         "lat": 48.16335034278178,
-        "lon": 17.13758685340995,
-        "class": "Broken"
+        "lon": 17.13758685340995
     },
     {
         "id": 5,
@@ -45,8 +41,7 @@
         "country": "CH",
         "name": "Wankdorf",
         "lat": 46.96354,
-        "lon": 7.46497,
-        "class": "Counterfeit"
+        "lon": 7.46497
     },
     {
         "id": 6,
@@ -55,8 +50,7 @@
         "country": "DE",
         "name": "Olympiastadion",
         "lat": 48.17307995784805,
-        "lon": 11.546569522873952,
-        "class": "Devotion"
+        "lon": 11.546569522873952
     },
     {
         "id": 7,
@@ -65,8 +59,7 @@
         "country": "DE",
         "name": "Deutsche Bank Park",
         "lat": 50.06866300896326,
-        "lon": 8.646158615469298,
-        "class": "Dotmatrx"
+        "lon": 8.646158615469298
     },
     {
         "id": 8,
@@ -75,8 +68,7 @@
         "country": "IT",
         "name": "San Siro",
         "lat": 45.47791884619711,
-        "lon": 9.124249633217454,
-        "class": "Exciter"
+        "lon": 9.124249633217454
     },
     {
         "id": 9,
@@ -85,8 +77,7 @@
         "country": "IT",
         "name": "Stadio Renato Dall'Ara",
         "lat": 44.492161965621804,
-        "lon": 11.309944766562259,
-        "class": "Gahan"
+        "lon": 11.309944766562259
     },
     {
         "id": 10,
@@ -95,8 +86,7 @@
         "country": "HU",
         "name": "Puskás Aréna",
         "lat": 47.50293983485959,
-        "lon": 19.097193429732318,
-        "class": "Liquidn"
+        "lon": 19.097193429732318
     },
     {
         "id": 11,
@@ -105,7 +95,6 @@
         "country": "CZ",
         "name": "Letnany Airport",
         "lat": 50.13115535502723,
-        "lon": 14.524957731877757,
-        "class": "Pain"
+        "lon": 14.524957731877757
     }
 ]
