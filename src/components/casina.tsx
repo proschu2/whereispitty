@@ -22,7 +22,7 @@ const Casina = () => (
         <Grid xs={12} sm="auto">
           <span className="DeltaMachine">CITY </span>
           <span style={{ verticalAlign: "middle" }}>
-            <CircleFlag countryCode={"ch"} height="15" />
+            <CircleFlag countryCode={"ch"} height="15" width="15" />
           </span>
         </Grid>
       </Grid>

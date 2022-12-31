@@ -23,7 +23,11 @@ const Concert: FC<location> = (props) => (
         <Grid xs={12} sm="auto">
           <span className="DeltaMachine">{props.city} </span>
           <span style={{ verticalAlign: "middle" }}>
-            <CircleFlag countryCode={props.country.toLowerCase()} height="15" />
+            <CircleFlag
+              countryCode={props.country.toLowerCase()}
+              height="15"
+              width="15"
+            />
           </span>
         </Grid>
       </Grid>
