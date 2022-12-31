@@ -1,6 +1,6 @@
 import React from "react";
 import data from "../data/locations.json";
-import Day from "../components/Day";
+import Day from "../components/day";
 import { location } from "../data/location";
 const Today = () => {
   const today = new Date().toLocaleDateString("en-GB");

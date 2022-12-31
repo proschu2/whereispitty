@@ -8,8 +8,8 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PitMap from "./components/PitMap";
-import Day from "./components/Day";
+import PitMap from "./components/pitMap";
+import Day from "./components/day";
 import Today from "./pages/today";
 
 const router = createBrowserRouter([

@@ -2,7 +2,7 @@ import { Map, Overlay } from "pigeon-maps";
 import React, { useState, useEffect } from "react";
 
 import data from "../data/locations.json";
-import Detail from "./Detail";
+import Detail from "./detail";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { location } from "../data/location";
 import { Outlet } from "react-router-dom";
@@ -37,6 +37,15 @@ const PitMap = () => {
     } else {
       setPinSize("25");
     }
+  };
+  const concertPics = ["pit_tour1.png", "pit_tour2.png", "pit_tour3.png"];
+  const [concert, setConcert] = useState<string>("pit_tour1.png");
+  const updateConcertPhoto = async () => {
+    setConcert(
+      concertPics.filter((p) => p !== concert)[
+        Math.floor(Math.random() * concertPics.length) - 1
+      ]
+    );
   };
   const closeModal = () => {
     setOpen(false);
@@ -78,7 +87,8 @@ const PitMap = () => {
                     src="/dm_round.png"
                     alt="DM"
                     height={pinSize}
-                    onClick={() => {
+                    onClick={async () => {
+                      await updateConcertPhoto();
                       setCenter([loc.lat, loc.lon]);
                       setZoom(8);
                       setOpen(!open);
@@ -90,7 +100,12 @@ const PitMap = () => {
             })}
       </Map>
       {location && (
-        <Detail props={location} open={open} closeModal={closeModal} />
+        <Detail
+          props={location}
+          open={open}
+          closeModal={closeModal}
+          concert={concert}
+        />
       )}
     </>
   );

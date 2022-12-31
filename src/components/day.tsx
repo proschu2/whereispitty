@@ -7,12 +7,13 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Unstable_Grid2";
 import Divider from "@mui/material/Divider";
 import Card from "@mui/material/Card";
-import Picture from "./Picture";
+import Picture from "./picture";
 import { location } from "../data/location";
-import Concert from "./Concert";
-import Casina from "./Casina";
+import Concert from "./concert";
+import Casina from "./casina";
 import { useParams } from "react-router-dom";
 import data from "../data/locations.json";
+import Info from "./info";
 
 const getDay = (id?: string): location => {
   if (typeof id === "undefined") {
@@ -39,11 +40,7 @@ const Day: FC<{ loc?: location }> = ({ loc }) => {
       sx={{ maxWidth: "100vh", mx: "auto", mt: 4, display: "flex" }}
     >
       <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <Picture
-          className="whiterose"
-          type={dayLocation ? dayLocation.type : "HOME"}
-        />
-        <Concert {...dayLocation} />
+        <Info loc={dayLocation} />
       </Box>
     </Card>
   );
