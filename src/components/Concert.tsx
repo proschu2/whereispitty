@@ -10,7 +10,7 @@ const Concert: FC<location> = (props) => (
   <CardContent className="redrose">
     <Typography gutterBottom variant="h4" component="div">
       <span className="DeltaMachine2">concerto </span>
-      <span className="DeMo">F</span>
+      <span className="DeMo">rs F tu</span>
     </Typography>
     <Typography sx={{ verticalAlign: "middle" }}>
       <Grid container columnSpacing={3} rowSpacing={1}>

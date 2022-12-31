@@ -1,7 +1,7 @@
 import "./index.css";
 import "./fonts/fonts.css";
 
-import React from "react";
+import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 
 // import App from "./App";
@@ -10,13 +10,16 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PitMap from "./components/PitMap";
 import Day from "./components/Day";
+import Today from "./pages/today";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <PitMap />,
+    children: [{ path: "today", element: <Today /> }],
   },
-  { path: "/day", element: <Day /> },
+  { path: "today", element: <Today /> },
+  { path: "day/:id", element: <Day /> },
 ]);
 
 const root = ReactDOM.createRoot(
@@ -24,9 +27,9 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

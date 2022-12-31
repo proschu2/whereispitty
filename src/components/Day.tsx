@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 
 import { styled } from "@mui/material/styles";
 import Container from "@mui/material/Container";
@@ -7,48 +7,45 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Unstable_Grid2";
 import Divider from "@mui/material/Divider";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
+import Picture from "./Picture";
+import { location } from "../data/location";
+import Concert from "./Concert";
+import Casina from "./Casina";
+import { useParams } from "react-router-dom";
+import data from "../data/locations.json";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: "center",
-  elevation: 0,
-  color: theme.palette.text.secondary,
-}));
+const getDay = (id?: string): location => {
+  if (typeof id === "undefined") {
+    return data.filter((l) => l.date === "*")[0];
+  }
+  const potentialLocations = data.filter(
+    (l) => l.id === parseInt(id) || l.date === "*"
+  );
+  return potentialLocations[potentialLocations.length - 1];
+};
 
-const Day = () => {
+const Day: FC<{ loc?: location }> = ({ loc }) => {
+  const { id } = useParams();
+  let dayLocation: location;
+  if (loc) {
+    dayLocation = loc;
+  } else {
+    dayLocation = getDay(id);
+  }
   return (
-    // <Container maxWidth="lg">
-    // <Box sx={{ my: "auto", mx: "auto", p: 4 }}>
     <Card
+      className="whiterose"
       variant="outlined"
       sx={{ maxWidth: "100vh", mx: "auto", mt: 4, display: "flex" }}
     >
       <Box sx={{ display: "flex", flexDirection: "column" }}>
-        {/*         <Grid container spacing={0}>
-          <Grid sm={8} xs={12}> */}
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          height="100%"
-          image="/photos/couch.png"
+        <Picture
+          className="whiterose"
+          type={dayLocation ? dayLocation.type : "HOME"}
         />
-        <CardContent>AAA</CardContent>
-        {/*         <Item elevation={0}>AAA</Item>
-          </Grid>
-
-          <Grid sm={4} xs={12}>
-            <Item elevation={0}>AAA</Item>
-          </Grid>
-        </Grid> */}
+        <Concert {...dayLocation} />
       </Box>
     </Card>
-    // </Box>
-    // </Container>
   );
 };
 

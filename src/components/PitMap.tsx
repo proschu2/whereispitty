@@ -5,6 +5,7 @@ import data from "../data/locations.json";
 import Detail from "./Detail";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { location } from "../data/location";
+import { Outlet } from "react-router-dom";
 /* 
 import { maptiler } from "pigeon-maps/providers";
 
@@ -61,29 +62,32 @@ const PitMap = () => {
           setZoom(zoom);
         }}
       >
+        <Outlet />
         {data &&
-          data.map((loc) => {
-            return (
-              <Overlay
-                className="whiterose"
-                key={loc.id}
-                anchor={[loc.lat, loc.lon]}
-                offset={[0, 0]}
-              >
-                <img
-                  src="/dm_round.png"
-                  alt="DM"
-                  height={pinSize}
-                  onClick={() => {
-                    setCenter([loc.lat, loc.lon]);
-                    setZoom(8);
-                    setOpen(!open);
-                    setLocation(loc);
-                  }}
-                />
-              </Overlay>
-            );
-          })}
+          data
+            .filter((l) => l.date !== "*")
+            .map((loc) => {
+              return (
+                <Overlay
+                  className="whiterose"
+                  key={loc.id}
+                  anchor={[loc.lat, loc.lon]}
+                  offset={[0, 0]}
+                >
+                  <img
+                    src="/dm_round.png"
+                    alt="DM"
+                    height={pinSize}
+                    onClick={() => {
+                      setCenter([loc.lat, loc.lon]);
+                      setZoom(8);
+                      setOpen(!open);
+                      setLocation(loc);
+                    }}
+                  />
+                </Overlay>
+              );
+            })}
       </Map>
       {location && (
         <Detail props={location} open={open} closeModal={closeModal} />

@@ -7,4 +7,5 @@ export interface location {
   lat: number;
   lon: number;
   class?: string;
+  type: string;
 }
