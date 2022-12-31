@@ -6,8 +6,8 @@ const Picture: FC<{ type?: string; className?: string; concert?: string }> = ({
   className,
   concert,
 }) => {
-  const homePics = ["coffee.png", "couch.png"];
-  const concertPics = ["pit_tour1.png", "pit_tour2.png", "pit_tour3.png"];
+  const homePics = ["coffee.webp", "couch.webp"];
+  const concertPics = ["pit_tour1.webp", "pit_tour2.webp", "pit_tour3.webp"];
   const concertPic =
     typeof concert === "undefined"
       ? concertPics[Math.floor(Math.random() * concertPics.length)]
