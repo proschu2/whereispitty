@@ -1,6 +1,6 @@
 import { Map, Overlay } from "pigeon-maps";
 import React, { useState, useEffect } from "react";
-
+import "../styles/map.css";
 import data from "../data/locations.json";
 import Detail from "./detail";
 import useWindowDimensions from "../hooks/useWindowDimensions";
@@ -58,6 +58,14 @@ const PitMap = () => {
 
   return (
     <>
+      <div className="tourTitle">
+        <span className="redLetter">P</span>
+        <span>IT | </span>
+        <span style={{ display: "inline-block" }} className="backwards">
+          OUR
+        </span>
+        <span className="redLetter">T</span>
+      </div>
       <Map
         //provider={maptilerProvider}
         height={height}
