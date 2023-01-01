@@ -11,11 +11,14 @@ const concertPics = [
 ];
 
 export const getDay = (id?: string): location => {
+  // id is either a date or the locarion id
   if (typeof id === "undefined") {
     return data.filter((l) => l.date === "*")[0];
   }
+  const q = id === "today" ? new Date().toLocaleDateString("en-GB") : id;
   const potentialLocations = data.filter(
-    (l) => l.id === parseInt(id) || l.date === "*"
+    (l) =>
+      (q.includes("/") ? l.date === q : l.id === parseInt(q)) || l.date === "*"
   );
   return potentialLocations[potentialLocations.length - 1];
 };
