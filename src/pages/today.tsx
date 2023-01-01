@@ -1,25 +1,15 @@
 import React, { useState } from "react";
-import data from "../data/locations.json";
-import Day from "../components/day";
-import { location } from "../data/location";
 import Detail from "../components/detail";
+import { getDay } from "../utils/concert";
 
 const Today = () => {
   const today = new Date().toLocaleDateString("en-GB");
-  const potentialLocations: location[] = data.filter(
-    (loc) => loc.date === "*" || loc.date === today
-  );
+  const loc = getDay(today);
   const [open, setOpen] = useState<boolean>(true);
   const closeModal = () => {
     setOpen(false);
   };
-  return (
-    <Detail
-      closeModal={closeModal}
-      open={open}
-      props={potentialLocations[potentialLocations.length - 1]}
-    />
-  );
+  return <Detail closeModal={closeModal} open={open} props={loc} />;
 };
 
 export default Today;
