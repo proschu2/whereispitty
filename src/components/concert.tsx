@@ -5,14 +5,16 @@ import { location } from "../data/location";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
+import "../styles/concert.css";
 
 const Concert: FC<location> = (props) => (
   <CardContent className="redrose">
     <Typography gutterBottom variant="h4" component="div">
       <span className="DeltaMachine2">concerto </span>
-      <span className="DeMo">rs F tu</span>
+      {/* <span className="DeMo">rs F tu</span> */}
+      <span className="DeMo">F</span>
     </Typography>
-    <Typography sx={{ verticalAlign: "middle" }}>
+    <Typography sx={{ verticalAlign: "middle" }} component="div">
       <Grid container columnSpacing={3} rowSpacing={1}>
         <Grid xs={12} sm="auto">
           <span className="Dotmatrx">{props.date} </span>
@@ -25,8 +27,8 @@ const Concert: FC<location> = (props) => (
           <span style={{ verticalAlign: "middle" }}>
             <CircleFlag
               countryCode={props.country.toLowerCase()}
-              height="15"
-              width="15"
+              loading="lazy"
+              className="countryBall"
             />
           </span>
         </Grid>

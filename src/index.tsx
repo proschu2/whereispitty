@@ -9,17 +9,22 @@ import reportWebVitals from "./reportWebVitals";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PitMap from "./components/pitMap";
-import Day from "./components/day";
+import Day from "./pages/day";
 import Today from "./pages/today";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <PitMap />,
-    children: [{ path: "today", element: <Today /> }],
+    children: [
+      {
+        path: "today",
+        element: <Today />,
+      },
+      { path: "day/:id", element: <Day /> },
+    ],
   },
-  { path: "today", element: <Today /> },
-  { path: "day/:id", element: <Day /> },
+  { path: "/:id", element: <PitMap /> },
 ]);
 
 const root = ReactDOM.createRoot(

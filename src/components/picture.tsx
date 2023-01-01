@@ -1,6 +1,7 @@
 import CardMedia from "@mui/material/CardMedia";
 import React, { FC } from "react";
 import { getPic } from "../utils/concert";
+import "../styles/picture.css";
 
 const Picture: FC<{ type?: string; className?: string; concert?: string }> = ({
   type,
@@ -18,8 +19,8 @@ const Picture: FC<{ type?: string; className?: string; concert?: string }> = ({
       className={className}
       component="img"
       alt={type}
-      width="100%"
       image={`/images/${pic}`}
+      loading="lazy"
     />
   );
 };

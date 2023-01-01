@@ -11,7 +11,7 @@ const Casina = () => (
       <span className="DeltaMachine2">concerto </span>
       <span className="DeMo">rs F tu</span>
     </Typography>
-    <Typography sx={{ verticalAlign: "middle" }}>
+    <Typography style={{ verticalAlign: "middle" }} component="div">
       <Grid container columnSpacing={3} rowSpacing={1}>
         <Grid xs={12} sm="auto">
           <span className="Dotmatrx">TODAY </span>
