@@ -1,11 +1,9 @@
 import React, { FC } from "react";
 import Dialog from "@mui/material/Dialog";
 import { location } from "../data/location";
-import Concert from "./concert";
 import DialogActions from "@mui/material/DialogActions";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import IconButton from "@mui/material/IconButton";
-import Grid from "@mui/material/Unstable_Grid2";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import Info from "./info";
@@ -16,13 +14,13 @@ const Detail: FC<{
   closeModal: () => void;
 }> = ({ props, open, closeModal, concert }) => {
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Dialog
       PaperProps={{
         sx: {
-          width: "50%",
-          maxHeight: "80vh",
+          width: fullScreen ? "100%" : "50%",
+          maxHeight: fullScreen ? "100%" : "80vh",
         },
       }}
       open={open}
