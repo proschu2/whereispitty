@@ -18,7 +18,7 @@ const Picture: FC<{ type?: string; className?: string; concert?: string }> = ({
       className={className}
       component="img"
       alt={type}
-      height="100%"
+      width="100%"
       image={`/images/${pic}`}
     />
   );
