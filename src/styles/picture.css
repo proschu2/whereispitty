@@ -1,0 +1,12 @@
+.MuiCardMedia-root {
+    border-radius: 16px;
+    margin: 32px;
+    width: calc(100% - 64px) !important;
+}
+
+@media screen and (min-width: 900px) {
+    .MuiCardMedia-root {
+        margin: 16px;
+        width: calc(100% - 2 * 16px) !important;
+    }
+}
