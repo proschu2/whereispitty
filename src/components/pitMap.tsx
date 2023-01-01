@@ -6,6 +6,8 @@ import Detail from "./detail";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { location } from "../data/location";
 import { Outlet } from "react-router-dom";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 /* 
 import { maptiler } from "pigeon-maps/providers";
 
@@ -16,7 +18,7 @@ const maptilerProvider = maptiler(
 const initialCenter: [number, number] = [48.71466750292578, 10.961941600930126];
 const PitMap = () => {
   const { height, width } = useWindowDimensions();
-  const initialZoom = width < 600 ? 5 : 6;
+  const initialZoom = useMediaQuery(useTheme().breakpoints.down("md")) ? 5 : 6;
   const [center, setCenter] = useState<[number, number]>(initialCenter);
   const [zoom, setZoom] = useState<number>(initialZoom);
   const resetMap = () => {
@@ -58,14 +60,16 @@ const PitMap = () => {
 
   return (
     <>
-      <div className="tourTitle">
-        <span className="redLetter">P</span>
-        <span>IT | </span>
-        <span style={{ display: "inline-block" }} className="backwards">
-          OUR
-        </span>
-        <span className="redLetter">T</span>
-      </div>
+      {!open && (
+        <div className="tourTitle">
+          <span className="redLetter">P</span>
+          <span>IT | </span>
+          <span style={{ display: "inline-block" }} className="backwards">
+            OUR
+          </span>
+          <span className="redLetter">T</span>
+        </div>
+      )}
       <Map
         //provider={maptilerProvider}
         height={height}
