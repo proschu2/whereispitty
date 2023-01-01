@@ -1,14 +1,24 @@
 .tourTitle {
     position: fixed;
     z-index: 1;
-    width: 300px;
+    width: 400px;
     height: 40px;
     text-align: center;
     left: 50%;
-    margin-left: -150px;
+    margin-left: -200px;
     top: max(25px, 5vh);
     font-family: Cocogoose;
-    font-size: 48px;
+    font-size: 2.5em;
+    vertical-align: middle;
+}
+
+.tourLogo {
+    position: fixed;
+    z-index: 1;
+    width: min(60vw, 300px);
+    left: 50%;
+    margin-left: calc(-1 * min(60vw, 300px) / 2);
+    top: max(25px, 5vh);
 }
 
 .backwards {
@@ -22,5 +32,15 @@
 
 .redLetter {
     -webkit-text-stroke: 2px red;
-    font-family: DeltaMachine2;
+    font-family: DeltaMachine;
+    font-size: 2.5em;
+    vertical-align: sub;
+}
+
+.vl {
+    border-left: 2px solid;
+    font-size: 0.8em;
+    margin-left: -10px;
+    margin-right: -10px;
+    vertical-align: middle;
 }

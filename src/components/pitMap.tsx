@@ -8,6 +8,7 @@ import { location } from "../data/location";
 import { Outlet } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import Tour from "./tour";
 /* 
 import { maptiler } from "pigeon-maps/providers";
 
@@ -60,16 +61,7 @@ const PitMap = () => {
 
   return (
     <>
-      {!open && (
-        <div className="tourTitle">
-          <span className="redLetter">P</span>
-          <span>IT | </span>
-          <span style={{ display: "inline-block" }} className="backwards">
-            OUR
-          </span>
-          <span className="redLetter">T</span>
-        </div>
-      )}
+      {!open && <Tour />}
       <Map
         //provider={maptilerProvider}
         height={height}
