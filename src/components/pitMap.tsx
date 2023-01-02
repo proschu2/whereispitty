@@ -14,7 +14,7 @@ import Tour from "./tour";
 import { maptiler } from "pigeon-maps/providers";
 
 const maptilerProvider = maptiler(
-  process.env.REACT_APP_MAPTILER_API_KEY ?? "",
+  import.meta.env.VITE_MAPTILER_API_KEY ?? "",
   "basic-v2-light"
 ); */
 const initialCenter: [number, number] = [48.71466750292578, 10.961941600930126];

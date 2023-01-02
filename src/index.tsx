@@ -41,7 +41,5 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals(
-  process.env.NODE_ENV && process.env.NODE_ENV === "development"
-    ? console.log
-    : undefined
+  import.meta.env && import.meta.env.DEV ? console.log : undefined
 );
