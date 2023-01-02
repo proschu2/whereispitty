@@ -9,16 +9,6 @@
         "type": "HOME"
     },
     {
-        "id": 0,
-        "date": "31/12/2022",
-        "city": "Home",
-        "country": "CH",
-        "name": "Casina",
-        "lat": 47.38412,
-        "lon": 8.50809,
-        "type": "CONCERT"
-    },
-    {
         "id": 1,
         "date": "18/05/2023",
         "city": "Amsterdam",
