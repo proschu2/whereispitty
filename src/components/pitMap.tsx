@@ -8,7 +8,7 @@ import { Outlet } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { useParams } from "react-router-dom";
-import { getDay } from "../utils/concert";
+import { getDay, getPic } from "../utils/concert";
 import Tour from "./tour";
 /* 
 import { maptiler } from "pigeon-maps/providers";
@@ -19,23 +19,34 @@ const maptilerProvider = maptiler(
 ); */
 const initialCenter: [number, number] = [48.71466750292578, 10.961941600930126];
 const PitMap = () => {
+  // use id (optional) parameters to select a specific day
   const { id } = useParams();
+
+  // hook used to keep updated from the size of window
   const { height, width } = useWindowDimensions();
+
+  // define initial zoom
   const initialZoom = useMediaQuery(useTheme().breakpoints.down("md")) ? 5 : 6;
+
+  // define initial center and zoom (and functions to change them)
   const [center, setCenter] = useState<[number, number]>(initialCenter);
   const [zoom, setZoom] = useState<number>(initialZoom);
+
+  // reset the map to initial center and zoom (after leaving modals)
   const resetMap = () => {
     setCenter(initialCenter);
     setZoom(initialZoom);
+    updatePinSize(initialZoom);
   };
+
+  // variables and functions to update status and content of the modal
   const [open, setOpen] = useState<boolean>(false);
   const [location, setLocation] = useState<location>();
 
+  // variable and function to update the size of the placeholders
   const [pinSize, setPinSize] = useState<string>("40");
   const updatePinSize = (zoom: number): void => {
-    if (zoom > 6) {
-      setPinSize("100");
-    } else if (zoom === 6) {
+    if (zoom >= 6) {
       setPinSize("60");
     } else if (zoom === 5) {
       setPinSize("40");
@@ -43,31 +54,29 @@ const PitMap = () => {
       setPinSize("25");
     }
   };
-  const concertPics = ["pit_tour1.png", "pit_tour2.png", "pit_tour3.png"];
-  const [concert, setConcert] = useState<string>("pit_tour1.png");
+
+  // define initial concert path and function to update it
+  const [concert, setConcert] = useState<string>(getPic("CONCERT"));
   const updateConcertPhoto = () => {
-    setConcert(
-      concertPics.filter((p) => p !== concert)[
-        Math.floor(Math.random() * concertPics.length) - 1
-      ]
-    );
-  };
-  const closeModal = () => {
-    setOpen(false);
-    resetMap();
-    updatePinSize(zoom);
+    setConcert(getPic("CONCERT", concert));
   };
 
+  // function to close the modal and reset the map
+  const closeModal = () => {
+    resetMap();
+    setOpen(false);
+  };
+
+  // function to define the location used by modal
   const defineLocation = (loc: location) => {
     updateConcertPhoto();
     setCenter([loc.lat, loc.lon]);
     setZoom(8);
-    setOpen(!open);
     setLocation(loc);
+    setOpen(!open);
   };
-  useEffect(() => {
-    updatePinSize(zoom);
-  }, [zoom]); // update based on zoom
+
+  // effect that is used to check if an id is there, in case set the location
   useEffect(() => {
     if (typeof id !== "undefined") {
       const loc = getDay(id);
@@ -87,6 +96,7 @@ const PitMap = () => {
         minZoom={5}
         onClick={resetMap}
         onBoundsChanged={({ center, zoom }) => {
+          updatePinSize(zoom);
           setCenter(center);
           setZoom(zoom);
         }}
