@@ -1,17 +1,3 @@
-.tourTitle {
-    position: fixed;
-    z-index: 1;
-    width: 400px;
-    height: 40px;
-    text-align: center;
-    left: 50%;
-    margin-left: -200px;
-    top: max(25px, 5vh);
-    font-family: Cocogoose;
-    font-size: 2.5em;
-    vertical-align: middle;
-}
-
 .tourDMLogo {
     width: 75%;
     text-align: center;
@@ -44,28 +30,4 @@
     justify-content: center;
     display: grid;
     height: fit-content;
-}
-
-.backwards {
-    transform: scale(-1, 1);
-    -moz-transform: scale(-1, 1);
-    -webkit-transform: scale(-1, 1);
-    -o-transform: scale(-1, 1);
-    -ms-transform: scale(-1, 1);
-    transform: scale(-1, 1);
-}
-
-.redLetter {
-    -webkit-text-stroke: 2px red;
-    font-family: DeltaMachine;
-    font-size: 2.5em;
-    vertical-align: sub;
-}
-
-.vl {
-    border-left: 2px solid;
-    font-size: 0.8em;
-    margin-left: -10px;
-    margin-right: -10px;
-    vertical-align: middle;
 }
