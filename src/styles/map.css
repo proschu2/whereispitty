@@ -37,9 +37,9 @@
 .tour {
     position: fixed;
     z-index: 1;
-    width: min(45vw, 200px);
+    width: min(50vw, 250px);
     left: 50%;
-    margin-left: calc(-1 * min(45vw, 200px) / 2);
+    margin-left: calc(-1 * min(50vw, 250px) / 2);
     top: max(25px, 5vh);
     justify-content: center;
     display: grid;
