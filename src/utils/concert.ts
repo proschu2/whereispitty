@@ -1,4 +1,3 @@
-import locations from "../data/locations.json";
 import { location } from "../data/location";
 import data from "../data/locations.json";
 
@@ -24,8 +23,9 @@ export const getDay = (id?: string): location => {
 };
 
 const randomGen = (items: Array<string>): number => {
-  return Math.floor(Math.random() * items.length);
+  return Math.floor(Math.random() * (items.length + 1));
 };
+
 type kind = "HOME" | "CONCERT";
 
 export const getPic = (kind: kind = "CONCERT", past?: string): string => {
