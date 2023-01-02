@@ -12,13 +12,38 @@
     vertical-align: middle;
 }
 
+.tourDMLogo {
+    width: 75%;
+    text-align: center;
+    margin: auto;
+}
+
+.tourFeat {
+    font-family: Cocogoose;
+    margin: auto;
+    text-align: center;
+    font-weight: 400;
+    top: calc(max(25px, 5vh) + 10vh);
+    font-style: italic;
+    font-size: 0.8em;
+}
+
 .tourLogo {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+.tour {
     position: fixed;
     z-index: 1;
-    width: min(60vw, 300px);
+    width: min(45vw, 200px);
     left: 50%;
-    margin-left: calc(-1 * min(60vw, 300px) / 2);
+    margin-left: calc(-1 * min(45vw, 200px) / 2);
     top: max(25px, 5vh);
+    justify-content: center;
+    display: grid;
+    height: fit-content;
 }
 
 .backwards {

@@ -2,7 +2,11 @@ import React from "react";
 import "../styles/map.css";
 const Tour = () => (
   <>
-    <img className="tourLogo" src="/images/title/PitTour.webp" />
+    <div className="tour">
+      <img className="tourLogo" src="/images/title/PitTour.webp" />
+      <span className="tourFeat">following</span>
+      <img className="tourDMLogo" src="/images/title/dmmm.webp" />
+    </div>
     {/* <div className="tourTitle">
       <span className="redLetter">P</span>
       <span>IT </span>
