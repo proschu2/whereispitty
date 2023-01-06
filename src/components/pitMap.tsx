@@ -9,13 +9,13 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { getDay, getPic } from '../utils/concert';
 import Tour from './tour';
-/* 
-import { maptiler } from "pigeon-maps/providers";
 
-const maptilerProvider = maptiler(
-  import.meta.env.VITE_MAPTILER_API_KEY ?? "",
-  "basic-v2-light"
-); */
+import { maptiler, osm } from 'pigeon-maps/providers';
+
+const provider =
+  import.meta.env.VITE_MAPTILER_API_KEY && import.meta.env.VITE_GRAY === 'true'
+    ? maptiler(import.meta.env.VITE_MAPTILER_API_KEY, 'basic-v2-light')
+    : osm;
 const initialCenter: [number, number] = [48.71466750292578, 10.961941600930126];
 const PitMap = () => {
   // use id (optional) parameters to select a specific day
@@ -87,7 +87,7 @@ const PitMap = () => {
     <>
       {!open && <Tour />}
       <Map
-        //provider={maptilerProvider}
+        provider={provider}
         height={height}
         width={width}
         center={center}
