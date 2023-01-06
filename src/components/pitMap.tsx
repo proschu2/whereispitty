@@ -1,20 +1,19 @@
-import { Map, Overlay } from "pigeon-maps";
-import React, { useState, useEffect } from "react";
-import data from "../data/locations.json";
-import Detail from "./detail";
-import useWindowDimensions from "../hooks/useWindowDimensions";
-import { location } from "../data/location";
-import { Outlet } from "react-router-dom";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
-import { useParams } from "react-router-dom";
-import { getDay, getPic } from "../utils/concert";
-import Tour from "./tour";
+import { Map, Overlay } from 'pigeon-maps';
+import React, { useState, useEffect } from 'react';
+import data from '../data/locations.json';
+import Detail from './detail';
+import useWindowDimensions from '../hooks/useWindowDimensions';
+import { location } from '../data/location';
+import { Outlet, useParams } from 'react-router-dom';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
+import { getDay, getPic } from '../utils/concert';
+import Tour from './tour';
 /* 
 import { maptiler } from "pigeon-maps/providers";
 
 const maptilerProvider = maptiler(
-  process.env.REACT_APP_MAPTILER_API_KEY ?? "",
+  import.meta.env.VITE_MAPTILER_API_KEY ?? "",
   "basic-v2-light"
 ); */
 const initialCenter: [number, number] = [48.71466750292578, 10.961941600930126];
@@ -26,7 +25,7 @@ const PitMap = () => {
   const { height, width } = useWindowDimensions();
 
   // define initial zoom
-  const initialZoom = useMediaQuery(useTheme().breakpoints.down("md")) ? 5 : 6;
+  const initialZoom = useMediaQuery(useTheme().breakpoints.down('md')) ? 5 : 6;
 
   // define initial center and zoom (and functions to change them)
   const [center, setCenter] = useState<[number, number]>(initialCenter);
@@ -44,21 +43,21 @@ const PitMap = () => {
   const [location, setLocation] = useState<location>();
 
   // variable and function to update the size of the placeholders
-  const [pinSize, setPinSize] = useState<string>("40");
+  const [pinSize, setPinSize] = useState<string>('40');
   const updatePinSize = (zoom: number): void => {
     if (zoom >= 6) {
-      setPinSize("60");
+      setPinSize('60');
     } else if (zoom === 5) {
-      setPinSize("40");
+      setPinSize('40');
     } else {
-      setPinSize("25");
+      setPinSize('25');
     }
   };
 
   // define initial concert path and function to update it
-  const [concert, setConcert] = useState<string>(getPic("CONCERT"));
+  const [concert, setConcert] = useState<string>(getPic('CONCERT'));
   const updateConcertPhoto = () => {
-    setConcert(getPic("CONCERT", concert));
+    setConcert(getPic('CONCERT', concert));
   };
 
   // function to close the modal and reset the map
@@ -78,7 +77,7 @@ const PitMap = () => {
 
   // effect that is used to check if an id is there, in case set the location
   useEffect(() => {
-    if (typeof id !== "undefined") {
+    if (typeof id !== 'undefined') {
       const loc = getDay(id);
       defineLocation(loc);
     }
@@ -104,15 +103,10 @@ const PitMap = () => {
         <Outlet />
         {data &&
           data
-            .filter((l) => l.date !== "*")
+            .filter((l) => l.date !== '*')
             .map((loc) => {
               return (
-                <Overlay
-                  className="whiterose"
-                  key={loc.id}
-                  anchor={[loc.lat, loc.lon]}
-                  offset={[0, 0]}
-                >
+                <Overlay className="whiterose" key={loc.id} anchor={[loc.lat, loc.lon]} offset={[0, 0]}>
                   <img
                     src="/dm_round.png"
                     alt="DM"
@@ -120,19 +114,13 @@ const PitMap = () => {
                     onClick={() => {
                       defineLocation(loc);
                     }}
+                    aria-hidden="true"
                   />
                 </Overlay>
               );
             })}
       </Map>
-      {location && (
-        <Detail
-          props={location}
-          open={open}
-          closeModal={closeModal}
-          concert={concert}
-        />
-      )}
+      {location && <Detail props={location} open={open} closeModal={closeModal} concert={concert} />}
     </>
   );
 };
