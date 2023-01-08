@@ -1,19 +1,11 @@
-import React from "react";
-import "../styles/map.css";
+import React from 'react';
+import '../styles/map.css';
 const Tour = () => (
   <>
     <div className="tour">
-      <img
-        className="tourLogo"
-        alt="Pit | Tour"
-        src="/images/title/PitTour.webp"
-      />
+      <img className="tourLogo" alt="Pit | Tour" src="/images/title/P_T.webp" />
       <span className="tourFeat">following</span>
-      <img
-        className="tourDMLogo"
-        alt="D|M - M|M"
-        src="/images/title/dmmm.webp"
-      />
+      <img className="tourDMLogo" alt="D|M - M|M" src="/images/title/dmmm.webp" />
     </div>
   </>
 );
