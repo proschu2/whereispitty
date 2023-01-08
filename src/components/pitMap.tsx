@@ -109,7 +109,7 @@ const PitMap = () => {
                 return (
                   <Overlay className="whiterose" key={loc.id} anchor={[loc.lat, loc.lon]} offset={[0, 0]}>
                     <img
-                      src="/dm_round.png"
+                      src="/dm_round.webp"
                       alt="DM"
                       height={pinSize}
                       onClick={() => {
