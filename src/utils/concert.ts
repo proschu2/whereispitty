@@ -2,7 +2,14 @@ import { location } from '../data/location';
 import data from '../data/locations.json';
 
 const homePics = ['coffee.webp', 'couch.webp'];
-const concertPics = ['pit_tour1.webp', 'pit_tour2.webp', 'pit_tour3.webp', 'pit_tour4.webp', 'pit_tour5.webp'];
+const concertPics = [
+  'pit_tour1.webp',
+  'pit_tour2.webp',
+  'pit_tour3.webp',
+  'pit_tour4.webp',
+  'pit_tour5.webp',
+  'pit_tour6.webp',
+];
 
 export const getDay = (id?: string): location => {
   // id is either a date or the locarion id
