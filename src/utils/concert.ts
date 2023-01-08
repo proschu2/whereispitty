@@ -11,6 +11,7 @@ const concertPics = [
   'pit_tour6.webp',
   'pit_tour7.webp',
   'pit_tour8.webp',
+  'pit_tour9.webp',
 ];
 
 export const getDay = (id?: string): location => {
