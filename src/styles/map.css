@@ -1,33 +1,37 @@
 .tourDMLogo {
-    width: 75%;
-    text-align: center;
-    margin: auto;
+  width: 75%;
+  text-align: center;
+  margin: auto;
 }
 
 .tourFeat {
-    font-family: Cocogoose;
-    margin: auto;
-    text-align: center;
-    font-weight: 400;
-    top: calc(max(25px, 5vh) + 10vh);
-    font-style: italic;
-    font-size: 0.8em;
+  font-family: Cocogoose;
+  margin: auto;
+  text-align: center;
+  font-weight: 400;
+  top: calc(max(25px, 5vh) + 10vh);
+  font-size: 0.8em;
+  letter-spacing: 0.2em;
 }
 
 .tourLogo {
-    text-align: center;
-    margin: auto;
-    width: 100%;
+  text-align: center;
+  margin: auto;
+  width: 100%;
 }
 
 .tour {
-    position: fixed;
-    z-index: 1;
-    width: min(50vw, 250px);
-    left: 50%;
-    margin-left: calc(-1 * min(50vw, 250px) / 2);
-    top: max(25px, 5vh);
-    justify-content: center;
-    display: grid;
-    height: fit-content;
+  position: fixed;
+  z-index: 1;
+  width: min(50vw, 250px);
+  left: 50%;
+  margin-left: calc(-1 * min(50vw, 250px) / 2);
+  top: max(25px, 5vh);
+  justify-content: center;
+  display: grid;
+  height: fit-content;
+}
+
+.map {
+  opacity: 75%;
 }

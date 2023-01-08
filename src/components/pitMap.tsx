@@ -86,40 +86,42 @@ const PitMap = () => {
   return (
     <>
       {!open && <Tour />}
-      <Map
-        provider={provider}
-        height={height}
-        width={width}
-        center={center}
-        zoom={zoom}
-        minZoom={5}
-        onClick={resetMap}
-        onBoundsChanged={({ center, zoom }) => {
-          updatePinSize(zoom);
-          setCenter(center);
-          setZoom(zoom);
-        }}
-      >
-        <Outlet />
-        {data &&
-          data
-            .filter((l) => l.date !== '*')
-            .map((loc) => {
-              return (
-                <Overlay className="whiterose" key={loc.id} anchor={[loc.lat, loc.lon]} offset={[0, 0]}>
-                  <img
-                    src="/dm_round.png"
-                    alt="DM"
-                    height={pinSize}
-                    onClick={() => {
-                      defineLocation(loc);
-                    }}
-                    aria-hidden="true"
-                  />
-                </Overlay>
-              );
-            })}
-      </Map>
+      <div className="map">
+        <Map
+          provider={provider}
+          height={height}
+          width={width}
+          center={center}
+          zoom={zoom}
+          minZoom={5}
+          onClick={resetMap}
+          onBoundsChanged={({ center, zoom }) => {
+            updatePinSize(zoom);
+            setCenter(center);
+            setZoom(zoom);
+          }}
+        >
+          <Outlet />
+          {data &&
+            data
+              .filter((l) => l.date !== '*')
+              .map((loc) => {
+                return (
+                  <Overlay className="whiterose" key={loc.id} anchor={[loc.lat, loc.lon]} offset={[0, 0]}>
+                    <img
+                      src="/dm_round.png"
+                      alt="DM"
+                      height={pinSize}
+                      onClick={() => {
+                        defineLocation(loc);
+                      }}
+                      aria-hidden="true"
+                    />
+                  </Overlay>
+                );
+              })}
+        </Map>
+      </div>
       {location && <Detail props={location} open={open} closeModal={closeModal} concert={concert} />}
     </>
   );
