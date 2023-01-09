@@ -105,6 +105,7 @@ const PitMap = () => {
                       src="/dm_round.webp"
                       alt="DM"
                       height={pinSize}
+                      width={pinSize}
                       onClick={() => {
                         defineLocation(loc);
                       }}
