@@ -1,19 +1,35 @@
 .countryBall {
-    height: 1rem;
+  height: 1rem;
 }
 
 @media screen and (max-width: 900px) {
-    .MuiCardContent-root {
-        padding-left: 32px !important;
-        padding-right: 32px !important;
-    }
-    .MuiTypography-h4 {
-        font-size: 3rem !important;
-    }
-    .MuiTypography-body1 {
-        font-size: 2rem !important;
-    }
-    .countryBall {
-        height: 2rem;
-    }
+  .MuiCardContent-root {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .MuiTypography-h4 {
+    font-size: 3rem !important;
+  }
+  .MuiTypography-body1 {
+    font-size: 2rem !important;
+  }
+  .countryBall {
+    height: 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .MuiCardContent-root {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .MuiTypography-h4 {
+    font-size: 2.2rem !important;
+  }
+  .MuiTypography-body1 {
+    font-size: 1.3rem !important;
+  }
+  .countryBall {
+    height: 1.3rem;
+  }
 }
