@@ -7,7 +7,7 @@ import { location } from '../data/location';
 import { Outlet, useParams } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import { getDay, getPic } from '../utils/concert';
+import { getDay } from '../utils/concert';
 import Tour from './tour';
 
 import { maptiler, osm } from 'pigeon-maps/providers';
@@ -54,12 +54,6 @@ const PitMap = () => {
     }
   };
 
-  // define initial concert path and function to update it
-  const [concert, setConcert] = useState<string>(getPic('CONCERT'));
-  const updateConcertPhoto = () => {
-    setConcert(getPic('CONCERT', concert));
-  };
-
   // function to close the modal and reset the map
   const closeModal = () => {
     resetMap();
@@ -68,7 +62,6 @@ const PitMap = () => {
 
   // function to define the location used by modal
   const defineLocation = (loc: location) => {
-    updateConcertPhoto();
     setCenter([loc.lat, loc.lon]);
     setZoom(8);
     setLocation(loc);
@@ -122,7 +115,7 @@ const PitMap = () => {
               })}
         </Map>
       </div>
-      {location && <Detail props={location} open={open} closeModal={closeModal} concert={concert} />}
+      {location && <Detail props={location} open={open} closeModal={closeModal} />}
     </>
   );
 };

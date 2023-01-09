@@ -34,8 +34,11 @@ const randomGen = (items: Array<string>): number => {
 
 type kind = 'HOME' | 'CONCERT';
 
-export const getPic = (kind: kind = 'CONCERT', past?: string): string => {
+export const getPic = (kind: kind = 'CONCERT', past?: string | number): string => {
   const pics = kind === 'CONCERT' ? concertPics : homePics;
+  if (typeof past === 'number') {
+    return `pit_tour${past}.webp`;
+  }
   const potentialPics = typeof past !== 'undefined' ? pics.filter((p) => p !== past) : pics;
   return potentialPics[randomGen(potentialPics)];
 };
