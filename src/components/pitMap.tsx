@@ -16,7 +16,7 @@ const provider =
   import.meta.env.VITE_MAPTILER_API_KEY && import.meta.env.VITE_GRAY === 'true'
     ? maptiler(import.meta.env.VITE_MAPTILER_API_KEY, 'basic-v2-light')
     : osm;
-const initialCenter: [number, number] = [48.71466750292578, 10.961941600930126];
+const initialCenter: [number, number] = [48.4033409828109, 11.76927756103885];
 const PitMap = () => {
   // use id (optional) parameters to select a specific day
   const { id } = useParams();
@@ -25,7 +25,7 @@ const PitMap = () => {
   const { height, width } = useWindowDimensions();
 
   // define initial zoom
-  const initialZoom = useMediaQuery(useTheme().breakpoints.down('md')) ? 5 : 6;
+  const initialZoom = useMediaQuery(useTheme().breakpoints.down('sm')) ? 4 : 6;
 
   // define initial center and zoom (and functions to change them)
   const [center, setCenter] = useState<[number, number]>(initialCenter);
