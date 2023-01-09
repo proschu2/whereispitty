@@ -10,7 +10,7 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 
 const CloseIcon = () => (
-  <span className="DeMo" style={{ color: 'red', fontSize: '2rem' }}>
+  <span className="DeMo" style={{ color: '#cd0119', fontSize: '2rem' }}>
     K
   </span>
 );
