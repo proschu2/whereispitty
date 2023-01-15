@@ -25,7 +25,7 @@ const PitMap = () => {
   const { height, width } = useWindowDimensions();
 
   // define initial zoom
-  const initialZoom = useMediaQuery(useTheme().breakpoints.down('sm')) ? 4 : 6;
+  const initialZoom = useMediaQuery(useTheme().breakpoints.down('sm')) ? 5 : 6;
 
   // define initial center and zoom (and functions to change them)
   const [center, setCenter] = useState<[number, number]>(initialCenter);
@@ -63,7 +63,7 @@ const PitMap = () => {
   // function to define the location used by modal
   const defineLocation = (loc: location) => {
     setCenter([loc.lat, loc.lon]);
-    setZoom(8);
+    //setZoom(8);
     setLocation(loc);
     setOpen(!open);
   };
